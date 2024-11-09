@@ -20,6 +20,22 @@ console.log(findIndicesSum([2, 3, 4, 6], 6));
 
 //* Approach 2
 
+// optimal approach:- hashmap
+//* T-O(n),S-O(n)
+
+function twoSum(num, target) {
+  let map = new Map();
+  for (let i = 0; i < num.length; i++) {
+    let complement = target - num[i];
+    if (map.has(complement)) return [map.get(complement), i];
+    map.set(num[i], i);
+  }
+  return [];
+}
+console.log(twoSum([2, 7, 11, 15], 9));
+
+//* Approach 3
+
 // using hashtable
 //* T - o(n);
 //* S - o(n)
@@ -39,7 +55,7 @@ function findIndicesSum(array, targetValue) {
 }
 console.log(findIndicesSum([2, 3, 8, 1, 9], 3));
 
-//* Approach 3
+//* Approach 4
 
 //* T-o(n), S-o(n)
 
