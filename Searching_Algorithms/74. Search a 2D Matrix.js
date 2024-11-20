@@ -28,7 +28,7 @@ console.log(isElementInMatrix(matrix, target2));
 //* Approach 2
 
 //binary search
-
+//* T- O(log m + log n= log m*n) S-O(1)
 function searchInMatrix(matrix, target) {
   let column = matrix[0].length;
   let row = matrix.length;
