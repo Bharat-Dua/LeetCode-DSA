@@ -1,3 +1,7 @@
+//* TC-O(1)
+//* SC-O(1)
+
+// sample example of doubly linked list to test
 class Node {
   constructor(value) {
     this.val = value;
