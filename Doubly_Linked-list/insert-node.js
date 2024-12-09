@@ -27,8 +27,17 @@ class DoublyLinkedList {
     node.next = null;
     node.prev = null;
   }
-  insertB(nodePosition, nodeInsert) {
-    //write your code here
+  insertBefore(nodePosition, nodeInsert) {
+    if (this.head === nodeInsert && this.tail === nodeInsert) return;
+    this.remove(nodeInsert);
+    nodeInsert.prev = nodePosition.prev;
+    nodeInsert.next = nodePosition;
+    if (this.head === nodePosition) {
+      this.head = nodeInsert;
+    } else {
+      nodePosition.prev.next = nodeInsert;
+    }
+    nodePosition.prev = nodeInsert;
   }
 }
 
@@ -54,5 +63,5 @@ linkedListDoubly.tail = five;
 //linkedListDoubly.remove(five);
 //linkedListDoubly.insertB(two,three);
 //null - 1 - 3 - 2 -  4 - 5 - null
-linkedListDoubly.insertB(three, seven);
+linkedListDoubly.insertBefore(three, seven);
 //null - 1 - 2 - 7 - 3 - 4 - 5 - null
