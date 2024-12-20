@@ -41,7 +41,17 @@ class buildBinaryHeap {
       idx = largest;
     }
   }
+  extractMax() {
+    let maximumValue = this.heap[0];
+    let last = this.heap.pop();
+    if (this.heap.length > 0) {
+      this.heap[0] = last;
+      this.bubbleDown(this.heap, 0);
+    }
+    return maximumValue;
+  }
 }
 
 let binaryHeap = new buildBinaryHeap();
 binaryHeap.buildHeap([10, 20, 5, 6, 12, 3, 8, 1, 9, 2]);
+binaryHeap.extractMax(); // returns 20
